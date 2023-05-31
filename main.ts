@@ -1,7 +1,8 @@
 input.onButtonPressed(Button.A, function () {
     if (nombre % 4 == 0) {
         basic.showIcon(IconNames.Yes)
-        basic.showNumber(score + 1)
+        score = score + 1
+        basic.showNumber(score)
         basic.clearScreen()
         music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
     } else {
@@ -14,7 +15,8 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     if (nombre % 4 != 0) {
         basic.showIcon(IconNames.Yes)
-        basic.showNumber(score + 1)
+        score = score + 1
+        basic.showNumber(score)
         basic.clearScreen()
         music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
     } else {
@@ -28,6 +30,10 @@ let score = 0
 let nombre = 0
 nombre = randint(1, 40)
 score = 0
+basic.showNumber(nombre)
+basic.pause(2000)
+basic.pause(1000)
+nombre = randint(1, 40)
 basic.showNumber(nombre)
 basic.pause(2000)
 basic.pause(1000)
